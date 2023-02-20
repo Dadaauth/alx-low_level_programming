@@ -1,0 +1,27 @@
+#include <stdio.h>
+/**
+ * main - short desc
+ * Return: return value is 0
+ */
+int main(void)
+{
+	int a;
+
+	char c;
+	
+	while (a <= 16)
+	{
+		if(a <= 10)
+		{
+			c = a;
+			putchar(c);
+		}
+		else
+		{
+			c = '%xa';
+			putchar(c);
+		}
+		a++;
+	}
+	putchar('\n');
+}
