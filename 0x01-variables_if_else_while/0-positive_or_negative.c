@@ -3,7 +3,7 @@
 #include <stdlib.h>
 /**
  * main - Short desc for the main function
- * return: This function returns 0
+ *Return: This function returns 0
  */
 int main(void)
 {
