@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
  * main - short desc
- * Return - return value is 0
+ * Return: return value is 0
  */
 int main(void)
 {
