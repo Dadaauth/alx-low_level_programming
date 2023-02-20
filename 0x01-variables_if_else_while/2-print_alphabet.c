@@ -9,9 +9,9 @@ int main(void)
 
 	int i;
 
-	for (i = 0; str[i] != '\0'; i++)
+	for(i = 0; str[i] != '\0'; i++;)
 	{
-		 putchar(str[i]);
+		putchar(str[i]);
 	}
 
 	return (0);
