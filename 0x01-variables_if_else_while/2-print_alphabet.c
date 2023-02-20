@@ -6,9 +6,12 @@
 int main(void)
 {
 	char str[] = "abcdefghijklmnopqrstuvwxyz\n";
+
 	int i;
-	for (i = 0; str[i] != '\0'; i++) {
-		    putchar(str[i]);
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		 putchar(str[i]);
 	}
 
 	return (0);
