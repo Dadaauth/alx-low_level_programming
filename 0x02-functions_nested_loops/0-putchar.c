@@ -1,16 +1,6 @@
 #include <unistd.h>
-/**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: Return value is written arguement
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-
-/**
+#include "main.h"
+/*
  * main - short desc
  * Return: Return value is Zero
  */
@@ -27,4 +17,17 @@ int main(void)
 	_putchar('\n');
 
 	return (0);
+}
+
+/**
+ * _putchar - writes the value of c to the stdout
+ * @c: The character to be printed
+ *
+ * Return: on success 1.
+ * On error, -1 is returned
+ */
+
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
 }
