@@ -1,6 +1,6 @@
 #include <unistd.h>
 #include "main.h"
-/*
+/**
  * main - short desc
  * Return: Return value is Zero
  */
@@ -18,17 +18,3 @@ int main(void)
 
 	return (0);
 }
-
-/**
- * _putchar - writes the value of c to the stdout
- * @c: The character to be printed
- *
- * Return: on success 1.
- * On error, -1 is returned
- */
-
-/** int _putchar(char c)
- * {
- *	return (write(1, &c, 1));
- * }
- */
