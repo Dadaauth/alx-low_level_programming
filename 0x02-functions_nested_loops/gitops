@@ -1,1 +1,1 @@
-git add . && git commit -m "dkjddj" && git push origin main
+git add . && git commit -m "dkjddj" && git push origin main && echo "dadaauth" && echo -ne '\n' && echo "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" && echo -ne '\n';
