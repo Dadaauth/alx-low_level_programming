@@ -3,6 +3,7 @@
 /**
  * test_sign - to test the code
  * @n: The value to be tested
+ * Return: returns 0.
  */
 
 int test_sign(int n)
@@ -14,6 +15,8 @@ int test_sign(int n)
 	_putchar(' ');
 	_putchar(r + '0');
 	_putchar('\n');
+
+	return (0);
 }
 /**
  * main - the main function
