@@ -6,12 +6,9 @@
  */
 int _abs(int c)
 {
-	/** int rv;
-	 */
-
 	if (c < 0)
 	{
-		return (-c);	
+		return (-c);
 	}
 	else
 	{
