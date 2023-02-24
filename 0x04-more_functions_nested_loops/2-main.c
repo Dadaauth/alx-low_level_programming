@@ -2,6 +2,7 @@
 #include <stdio.h>
 /**
  * main - checks the code
+ * 
  * Return: returns 0
  */
 int main(void)
