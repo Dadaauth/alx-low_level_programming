@@ -4,7 +4,7 @@
  * @str: the string to work on.
  */
 void puts_half(char *str)
-{i
+{
 	int len = 0;
 	int len2;
 
