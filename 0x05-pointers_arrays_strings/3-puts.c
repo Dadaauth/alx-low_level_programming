@@ -1,6 +1,6 @@
 #include "main.h"
-/*
- * puts - Prints a String followed by a new line to the stdout
+/**
+ * _puts - prints a string followed by a new line
  * @str: The string to be printed
  */
 void _puts(char *str)
