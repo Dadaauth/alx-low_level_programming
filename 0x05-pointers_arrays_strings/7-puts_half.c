@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * puts_half - prints the second half of a string
  * @str: the string to work on.
@@ -24,7 +25,8 @@ void puts_half(char *str)
 	else if (len % 2 > 0)
 	{
 		len2 = (len - 1) / 2;
-		while (str[len2 + 1] != '\0')
+		len2++;
+		while (str[len2] != '\0')
 		{
 			_putchar(str[len2]);
 			len2++;
