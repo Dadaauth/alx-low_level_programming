@@ -1,5 +1,5 @@
 #include "main.h"
-/*8
+/*
  * _puts - Prints a String followed by a new line to the stdout
  * @str: The string to be printed
  */
