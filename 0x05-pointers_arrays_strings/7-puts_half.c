@@ -4,7 +4,7 @@
  * @str: the string to work on.
  */
 void puts_half(char *str)
-{
+{i
 	int len = 0;
 	int len2;
 
@@ -21,7 +21,7 @@ void puts_half(char *str)
 			len2++;
 		}
 	}
-	else if (len % 2 != 0)
+	else if (len % 2 > 0)
 	{
 		len2 = (len - 1) / 2;
 		while (str[len2] != '\0')
