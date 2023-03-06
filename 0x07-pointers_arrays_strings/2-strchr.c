@@ -3,9 +3,9 @@
 /**
  * _strchr - locates a character in a string
  * @s: the string to locate the character from
- * @c: the character to locate
+ * @c: this is the character to locate
  * Return: Returns a pointer to the first occurence of the character
- * returns null if it doesn't contain the char
+ * but null if it doesn't contain the char
  */
 char *_strchr(char *s, char c)
 {
