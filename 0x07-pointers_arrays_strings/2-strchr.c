@@ -25,5 +25,5 @@ char *_strchr(char *s, char c)
 		}
 	}
 
-	return ((void*)0);
+	return NULL;
 }
