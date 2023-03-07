@@ -9,19 +9,9 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	int i, j, k, len_ned;
+	int i, j;
 	int isAvailable;
 	char *f;
-
-	len_ned = 0;
-	for (k = 0; *(needle + k) != '\0'; k++)
-	{
-		len_ned++;
-	}
-	if (len_ned == 0)
-	{
-		return (haystack);
-	}
 
 	for (i = 0; *(haystack + i) != '\0'; i++)
 	{
