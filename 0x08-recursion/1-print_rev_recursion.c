@@ -9,10 +9,11 @@
 int get_string_length(char *s, int i)
 {
 	if (*(s + i) == '\0')
+	{
 		return (i - 1);
+	}
 	i++;
-	get_string_length(s, i);
-	return (0);
+	return (get_string_length(s, i));
 }
 /**
  * print_rev_string - prints a string in reverse using recursion
