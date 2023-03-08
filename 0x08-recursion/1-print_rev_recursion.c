@@ -19,7 +19,7 @@ int get_string_length(char *s, int i)
  * @strlen: the length of the string to work on
  * Return: nothing
  */
-void print_rev_string(char *s, str_len)
+void print_rev_string(char *s, int str_len)
 {
 	if (str_len < 0)
 	{
