@@ -18,7 +18,7 @@ int get_string_length(char *s, int i)
 /**
  * print_rev_string - prints a string in reverse using recursion
  * @s: the string to work on.
- * @strlen: the length of the string to work on
+ * @str_len: the length of the string to work on
  * Return: nothing
  */
 void print_rev_string(char *s, int str_len)
