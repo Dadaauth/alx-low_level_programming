@@ -30,7 +30,8 @@ void print_rev_string(char *s, strlen)
 	print_rev_string(s, strlen);
 }
 /**
- * _print_rev_recursion - prints a string in reverse using recursion. this is the main function
+ * _print_rev_recursion - prints a string in reverse
+ * using recursion. this is the main function
  * @s: the string to print
  * Return: nothing
  */
