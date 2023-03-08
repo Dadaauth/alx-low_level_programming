@@ -3,7 +3,7 @@
 int count_length(char *s, int i)
 {
 	if (*(s + i) == '\0')
-		return (i - 1);
+		return (i);
 	i++;
 	return (count_length(s, i));
 }
