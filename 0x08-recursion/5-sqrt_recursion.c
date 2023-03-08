@@ -19,7 +19,6 @@ int get_sqrt(int n, long unsigned int n2)
 		return (-1);
 	if (n2 * n2 == nst)
 		return (n2);
-	printf("%ld * %ld = %ld\n", n2, n2, n2 * n2);
 	n2--;
 	return (get_sqrt(n, n2));
 }
