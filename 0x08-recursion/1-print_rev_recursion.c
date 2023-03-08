@@ -19,15 +19,15 @@ int get_string_length(char *s, int i)
  * @strlen: the length of the string to work on
  * Return: nothing
  */
-void print_rev_string(char *s, strlen)
+void print_rev_string(char *s, str_len)
 {
-	if (strlen < 0)
+	if (str_len < 0)
 	{
 		return;
 	}
-	_putchar(*(s + strlen));
-	strlen--;
-	print_rev_string(s, strlen);
+	_putchar(*(s + str_len));
+	str_len--;
+	print_rev_string(s, str_len);
 }
 /**
  * _print_rev_recursion - prints a string in reverse
@@ -37,7 +37,7 @@ void print_rev_string(char *s, strlen)
  */
 void _print_rev_recursion(char *s)
 {
-	int strlen = get_string_length(s, 0);
+	int str_len = get_string_length(s, 0);
 
-	print_rev_string(s, strlen);
+	print_rev_string(s, str_len);
 }
