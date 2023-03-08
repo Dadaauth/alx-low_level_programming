@@ -12,6 +12,7 @@ int get_string_length(char *s, int i)
 		return (i - 1);
 	i++;
 	get_string_length(s, i);
+	return (0);
 }
 /**
  * print_rev_string - prints a string in reverse using recursion
