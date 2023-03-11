@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 {
 	int i;
 	long int sum;
-	long int argvlong[98];
+	long int argvlong[10100];
 
 	if (argc == 1)
 		printf("0\n");
@@ -48,9 +48,9 @@ int main(int argc, char *argv[])
 			return (1);
 		}
 
-		if (argc > 99)
+		if (argc > 10100)
 		{
-			printf("Maximum arguements  is 98, result might not be correct!!");
+			printf("Maximum arguements  is 10,100, result might not be correct!!");
 		}
 
 		sum = 0;
