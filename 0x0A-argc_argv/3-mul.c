@@ -8,12 +8,19 @@
  */
 int main(int argc, char *argv[])
 {
+	long int arg1, arg2, result;
+
 	if (argc == 1 || argc > 3)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
 
-	exit(EXIT_SUCCESS);
+	arg1 = atoi(argv[1]);
+	arg2 = atoi(argv[2]);
+	result = arg1 * arg2;
+
+	printf("%ld\n", result);
+
+	return (0);
 }
