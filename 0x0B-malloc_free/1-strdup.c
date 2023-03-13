@@ -21,12 +21,13 @@ unsigned int string_len(char *str, int n)
  */
 char *_strdup(char *str)
 {
-	char *ptr;
+	char *ptr ;
 	unsigned int i;
-	unsigned int str_len = string_len(str, 0);
+	unsigned int str_len;
 
-	if (str == NULL)
+	if(!str)
 		return (NULL);
+	str_len = string_len(str, 0);
 	ptr = malloc(str_len * sizeof(char));
 
 	for (i = 0; i < str_len + 1; i++)
