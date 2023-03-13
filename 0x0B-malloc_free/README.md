@@ -4,6 +4,7 @@ All examples and tasks done when praticing the malloc and free functions can be 
 
 
 
+
 FILE NAME ::::::::::::::::::::::::::::::::::::::::::::::::::::::: FUNCTION
 
 executables_folder ::::::::::::::::::::::::::::::: folder for all the compiled files. i.e executables
@@ -18,5 +19,3 @@ main.h ::::::::::::::::::::::::::::::::::::::::::::::::::: contains all the prot
 
 
 FILE NAME ::::::::::::::::::::::::::::::::::::::::::::::::::::::: FUNCTION
-
-
