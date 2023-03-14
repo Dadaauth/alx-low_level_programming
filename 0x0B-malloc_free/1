@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+/**
+ * alloc_grid - creates a two dimensional array of integers,
+ * size is based on the value given to it and all int values
+ * in the array is zero(0)
+ * @width: width of the array
+ * @height: height of the arrray
+ * Return: a pointer to the two dimensional array created.
+ */
+int **alloc_grid(int width, int height)
+{
+	int **array;
+	int h, w, i;
+
+	if (width <= 0 || height <= 0)
+		return (NULL);
+
+	printf("Before malloc call!\n");
+	array = (int**) malloc((height) * sizeof(int));
+	printf("After first malloc call!\n");
+	for (i = 0; i < height; i++)
+	{
+		array[i] = (int*) malloc(width * sizeof(int));
+		if (array[i] == NULL)
+			return (NULL);
+	}
+	printf("After second malloc call!\n");
+	if (array == NULL)
+		return (NULL);
+	h = 0;
+	while (h < height)
+	{
+		printf("height while loop, %d time(s)\n", h + 1);
+		w = 0;
+		while (w < width)
+		{
+			printf("width while loop, %d times(s)\n", w + 1);
+			
+			printf("Value of array[%d][%d] = %d\n", 0, 0, array[3][1]);
+			printf("After initializing Array with *array[%d][%d]\n", h, w);
+			w++;
+		}
+		h++;
+	}
+
+	return (array);
+}
