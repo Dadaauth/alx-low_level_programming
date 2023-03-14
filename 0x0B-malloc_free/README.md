@@ -17,5 +17,7 @@ main.h ::::::::::::::::::::::::::::::::::::::::::::::::::: contains all the prot
 
 1-strdup.c :::::::::::::::::::::::::::::::::::::::::::::: returns a pointer to a newly allocated memory in space which contains a copy of the string given in memory
 
+2-str_concat.c :::::::::::::::::::::::::::::::::::::::: concatenates two strings and returns a pointer to the memory location of the resulting string
+
 
 FILE NAME ::::::::::::::::::::::::::::::::::::::::::::::::::::::: FUNCTION
