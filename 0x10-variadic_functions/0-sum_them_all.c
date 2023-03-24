@@ -2,6 +2,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <string.h>
+#include "variadic_functions.h"
 /**
  * sum_them_all - adds all the arguements given together
  * @n: number of arguments given
