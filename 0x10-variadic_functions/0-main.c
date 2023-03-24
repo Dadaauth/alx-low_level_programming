@@ -2,7 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include "variadic_functions.h"
-
+/**
+ * main - check the code
+ * return - always 0.
+ */
 int main(void)
 {
     int sum;

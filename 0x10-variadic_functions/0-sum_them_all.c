@@ -6,6 +6,7 @@
 /**
  * sum_them_all - adds all the arguements given together
  * @n: number of arguments given
+ * @...: variadic arguments
  * Return: sum of all the arguments, zero(0) if no arguments
  */
 
