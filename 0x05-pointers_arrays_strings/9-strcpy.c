@@ -13,7 +13,7 @@ char *_strcpy(char *dest, char *src)
 	while (src[i])
 	{
 		dest[i]	= src[i];
-		printf("%c", dest[i]);
+		printf("Testing if this is truely working!!!");
 		i++;
 	}
 	dest[i] = '\0';
