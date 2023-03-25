@@ -8,8 +8,8 @@
  */
 char *_strcpy(char *dest, __attribute__ ((unused))char *src)
 {
-	__attribute__ ((unused))int i;	
-	
+	__attribute__ ((unused))int i;
+
 	for (i = 0; src[i]; i++)
 	{
 		dest[i] = src[i];
