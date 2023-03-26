@@ -49,5 +49,6 @@ int main(void)
     grid[0][3] = 98;
     grid[3][4] = 402;
     print_grid(grid, 20, 20);
+    free(grid);
     return (0);
 }
