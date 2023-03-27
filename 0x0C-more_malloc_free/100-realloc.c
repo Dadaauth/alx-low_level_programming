@@ -65,7 +65,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		return (NULL);
 	}
 	copymem_con(p, ptr, size);
-	ptr = malloc(new_size);
+	ptr = malloc(new_size + 1);
 	if (ptr == NULL)
 	{
 		free(p);
