@@ -16,14 +16,14 @@ void copymem_con(void *p1, void *p2, unsigned int size)
 
 	for (i = 0; i < size; i++)
 	{
-		if (sizeof(*(int*)p2) == sizeof(int))
-			*((int*)p1 + i) = *((int*)p2 + i);
-		else if (sizeof(*(char*)p2) == sizeof(char))
-			*((char*)p1 + i) = *((char*)p2 + i);
-		else if (sizeof(*(float*)p2) == sizeof(float))
-			*((float*)p1 + i) = *((float*)p2 + i);
-		else if (sizeof(*(double*)p2) == sizeof(double))
-			*((double*)p1 + i) = *((double*)p2 + i);
+		if (sizeof(*(int *)p2) == sizeof(int))
+			*((int *)p1 + i) = *((int *)p2 + i);
+		else if (sizeof(*(char *)p2) == sizeof(char))
+			*((char *)p1 + i) = *((char *)p2 + i);
+		else if (sizeof(*(float *)p2) == sizeof(float))
+			*((float *)p1 + i) = *((float *)p2 + i);
+		else if (sizeof(*(double *)p2) == sizeof(double))
+			*((double *)p1 + i) = *((double *)p2 + i);
 	}
 	free(p2);
 }
@@ -38,8 +38,10 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	void *p;
 	unsigned int size;
-	
+
 	if (new_size == old_size)
+		return (ptr);
+	if (ptr == NULL && new_size == 0)
 		return (ptr);
 	if (ptr == NULL)
 	{
@@ -49,8 +51,10 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	if (ptr != NULL && new_size == 0)
 	{
 		free(ptr);
+		printf("I want to return NULL\n");
 		return (NULL);
 	}
+
 	if (new_size < old_size)
 		size = new_size;
 	else

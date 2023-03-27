@@ -39,10 +39,16 @@ void simple_print_buffer(char *buffer, unsigned int size)
 int main(void)
 {
     char *p;
+    char *new_p;
     int i;
 
-    p = malloc(sizeof(char) * 10);
-    p = _realloc(p, sizeof(char) * 10, sizeof(char) * 98);
+    p = malloc(sizeof(char) * 30);
+    new_p = _realloc(p, sizeof(char) * 30, sizeof(char) * 0);
+    if (p == NULL)
+    {
+	    printf("p returned is NULL\n");
+	    return (1);
+    }
     i = 0;
     while (i < 98)
     {
