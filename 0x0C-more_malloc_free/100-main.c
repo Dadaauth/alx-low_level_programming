@@ -42,14 +42,14 @@ int main(void)
     int i;
 
     p = malloc(sizeof(char) * 30);
-    printf("Size of p with malloc(): %d\n", sizeof(*p));
+    printf("Size of p with malloc(): %lu\n", sizeof(*p));
     p = _realloc(p, sizeof(char) * 30, sizeof(char) * 120);
     if (p == NULL)
     {
 	    printf("p returned is NULL\n");
 	    return (1);
     }
-    printf("size of p (%d)\n", sizeof(p));
+    printf("size of p (%lu)\n", sizeof(p));
     for (i = 0; i < 120; i++)
 	    printf("Value of p[%d] = %c\n", i, p[i]);
     i = 0;

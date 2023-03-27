@@ -16,8 +16,8 @@ void copymem_con(void *p1, void *p2, unsigned int size)
 
 	for (i = 0; i < size; i++)
 	{
-		if (sizeof(*(int *)p2) == sizeof(int))
-			*((int *)p1 + i) = *((int *)p2 + i);
+		if (sizeof(*(char *)p2) == sizeof(char))
+			*((char *)p1 + i) = *((char *)p2 + i);
 		else if (sizeof(*(char *)p2) == sizeof(char))
 			*((char *)p1 + i) = *((char *)p2 + i);
 		else if (sizeof(*(float *)p2) == sizeof(float))
@@ -65,7 +65,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		return (NULL);
 	}
 	copymem_con(p, ptr, size);
-	ptr = malloc(new_size + 1);
+	ptr = malloc(new_size);
 	if (ptr == NULL)
 	{
 		free(p);
@@ -73,7 +73,5 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		return (NULL);
 	}
 	copymem_con(ptr, p, size);
-	if (sizeof(*(char *)ptr) == sizeof(char))
-		(*((char *)ptr + (new_size + 1))) = '\0';
 	return (ptr);
 }
