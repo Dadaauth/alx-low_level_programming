@@ -73,5 +73,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		return (NULL);
 	}
 	copymem_con(ptr, p, size);
+	if (sizeof(*(char *)ptr) == sizeof(char))
+		(*((char *)ptr + (new_size + 1))) = '\0';
 	return (ptr);
 }
