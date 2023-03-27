@@ -59,15 +59,16 @@ char **strtow(char *str)
 	{
 		if (str[i] != ' ')
 		{
-			for (j = i; str[j] != ' '; j++)
+			for (j = i; str[j] != ' ' && str[j] != '\0'; j++)
 				charCount++;
 			temp[a] = malloc((charCount + 1) * sizeof(char));
+			charCount = 0;
 			if (temp[a] == NULL)
 			{
 				free_malloc(temp, a);
 				return (NULL);
 			}
-			for (j = i; str[j] != ' '; j++)
+			for (j = i; str[j] != ' ' && str[j] != '\0'; j++)
 			{
 				temp[a][b] = str[j];
 				b++;
@@ -75,7 +76,7 @@ char **strtow(char *str)
 			temp[a][b] = '\0';
 			b = 0;
 			a++;
-			i = j;
+			i = j - 1;
 		}
 		if (str[i + 1] == '\0')
 			temp[a] = NULL;
