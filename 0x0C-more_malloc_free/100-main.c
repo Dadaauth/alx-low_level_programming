@@ -42,18 +42,18 @@ int main(void)
     int i;
 
     p = malloc(sizeof(char) * 30);
-    p = _realloc(p, sizeof(char) * 30, sizeof(char) * 0);
+    p = _realloc(p, sizeof(char) * 30, sizeof(char) * 20);
     if (p == NULL)
     {
 	    printf("p returned is NULL\n");
 	    return (1);
     }
     i = 0;
-    while (i < 120)
+    while (i < 20)
     {
 	    p[i++] = 98;
     }
-    simple_print_buffer(p, 120);
+    simple_print_buffer(p, 20);
     free(p);
     return (0);
 }
