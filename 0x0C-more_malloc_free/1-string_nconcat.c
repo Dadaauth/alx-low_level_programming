@@ -41,7 +41,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	else
 		malloc_size = (str_l1 + n + 1);
-	p = malloc(malloc_size * sizeof (char));
+	p = malloc(malloc_size * sizeof(char));
 	if (p == NULL)
 	{
 		free(p);
