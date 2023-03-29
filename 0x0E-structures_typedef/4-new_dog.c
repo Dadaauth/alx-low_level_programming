@@ -10,13 +10,23 @@
 void copy_str(dog_t *s1, char *s2, char *s3)
 {
 	int i;
+	char *ss1, *ss2;
 
-	s1->name = s2;
-	s1->owner = s3;
+	ss1 = malloc(sizeof(s2));
+	ss2 = malloc(sizeof(s3));
+	if (ss1 == NULL || ss2 == NULL)
+		exit(98);
+
 	for (i = 0; *(s2 + i); i++)
 	{
-		
+		ss1[i] = s2[i];
 	}
+	for (i = 0; s3[i]; i++)
+	{
+		ss2[i] = s3[i];
+	}
+	s1->name = ss1;
+	s1->owner = ss2;
 
 }
 /**
@@ -36,7 +46,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(newdog);
 		return (NULL);
 	}
-	
+
 	copy_str(newdog, name, owner);
 	newdog->age = age;
 
