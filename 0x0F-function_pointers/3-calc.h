@@ -1,6 +1,10 @@
 #ifndef CALC_H
 #define CALC_H
-
+/**
+ * struct op - operations structure
+ * @op: operation sign
+ * @f: operation function
+ */
 typedef struct op
 {
 	char *op;

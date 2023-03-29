@@ -12,13 +12,14 @@
 int main(int __attribute__ ((unused)) argc, char *argv[])
 {
 	int (*f)(int a, int b);
+	int r = atoi(argv[3]);
 
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	if (atoi(argv[3]) == 0 && (strcmp(argv[2], "/") == 0 || strcmp(argv[2], "%") == 0))
+	if (r == 0 && (strcmp(argv[2], "/") == 0 || strcmp(argv[2], "%") == 0))
 	{
 		printf("Error\n");
 		exit(100);
