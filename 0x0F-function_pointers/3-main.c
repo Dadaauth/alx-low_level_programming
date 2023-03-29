@@ -4,9 +4,9 @@
 #include "3-calc.h"
 #include "function_pointers.h"
 /**
- * the main function
- * @argc - argument count
- * @argv - argument vector
+ * main - the main function
+ * @argc: argument count
+ * @argv: argument vector
  * Return: Always zero
  */
 int main(int __attribute__ ((unused)) argc, char *argv[])
@@ -18,8 +18,7 @@ int main(int __attribute__ ((unused)) argc, char *argv[])
 		printf("Error\n");
 		exit(98);
 	}
-
-	if ((strcmp(argv[2], "/") || strcmp(argv[2], "%")) && argv[3] == 0)
+	if (atoi(argv[3]) == 0 && (strcmp(argv[2], "/") == 0 || strcmp(argv[2], "%") == 0))
 	{
 		printf("Error\n");
 		exit(100);
