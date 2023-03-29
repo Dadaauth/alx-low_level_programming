@@ -17,13 +17,6 @@ int str_len(char *str)
 	return (len);
 }
 /**
- * copy_str - copies strings
- * @s1: string 1
- * @s2: string 2
- * @s3: third string
- */
-
-/**
  * new_dog - creates a new dog
  * @name: name for the dog
  * @age: age for the dog
@@ -42,7 +35,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(newdog);
 		return (NULL);
 	}
-	
+
 	newdog->age = age;
 	name2 = malloc(str_len(name) + 1);
 	if (name2 == NULL)
