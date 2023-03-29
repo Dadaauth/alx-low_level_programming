@@ -15,7 +15,11 @@ void copy_str(dog_t *s1, char *s2, char *s3)
 	ss1 = malloc(sizeof(s2));
 	ss2 = malloc(sizeof(s3));
 	if (ss1 == NULL || ss2 == NULL)
+	{
+		free(ss1);
+		free(ss2);
 		exit(98);
+	}
 
 	for (i = 0; *(s2 + i); i++)
 	{
@@ -27,7 +31,8 @@ void copy_str(dog_t *s1, char *s2, char *s3)
 	}
 	s1->name = ss1;
 	s1->owner = ss2;
-
+	free(ss1);
+	free(ss2);
 }
 /**
  * new_dog - creates a new dog
