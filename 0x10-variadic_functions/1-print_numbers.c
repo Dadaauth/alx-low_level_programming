@@ -1,7 +1,7 @@
 #include "variadic_functions.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdargs.h>
+#include <stdarg.h>
 /**
  * print_numbers - prints numbers using the
  * concept of variadic functions
