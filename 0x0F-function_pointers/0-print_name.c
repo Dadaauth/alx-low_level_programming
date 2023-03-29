@@ -7,5 +7,6 @@
  */
 void print_name(char *name, char (*f)(char *))
 {
-	f(name);
+	if (f != NULL)
+		f(name);
 }
