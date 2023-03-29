@@ -2,37 +2,34 @@
 #include <stdlib.h>
 #include "dog.h"
 /**
+ * str_len - djkenvjk
+ * @str:  jfkfkenejkenj
+ * Return: nfinfek
+ */
+int str_len(char *str)
+{
+	int i;
+
+	for (i = 0; str[i]; i++)
+	{
+
+	}
+	return (i - 1);
+}
+/**
  * copy_str - copies strings
  * @s1: string 1
  * @s2: string 2
  * @s3: third string
  */
-void copy_str(dog_t *s1, char *s2, char *s3)
+void copy_str(char *s1, char *s2)
 {
 	int i;
-	char *ss1, *ss2;
 
-	ss1 = malloc(sizeof(s2));
-	ss2 = malloc(sizeof(s3));
-	if (ss1 == NULL || ss2 == NULL)
+	for (i = 0; s2[i]; i++)
 	{
-		free(ss1);
-		free(ss2);
-		exit(98);
+		s1[i] = s2[i];
 	}
-
-	for (i = 0; *(s2 + i); i++)
-	{
-		ss1[i] = s2[i];
-	}
-	for (i = 0; s3[i]; i++)
-	{
-		ss2[i] = s3[i];
-	}
-	s1->name = ss1;
-	s1->owner = ss2;
-	free(ss1);
-	free(ss2);
 }
 /**
  * new_dog - creates a new dog
@@ -51,8 +48,23 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(newdog);
 		return (NULL);
 	}
+	newdog->name = malloc(str_len(name) + 1);
+	if (newdog->name == NULL)
+	{
+		free(newdog->name);
+		free(newdog);
+		return (NULL);
+	}
 
-	copy_str(newdog, name, owner);
+	newdog->owner = malloc(str_len(owner) + 1);
+	if (newdog->owner == NULL)
+	{
+		free(newdog->owner);
+		free(newdog->name);
+		free(newdog);
+	}
+	copy_str(newdog->name, name);
+	copy_str(newdog->owner, owner);
 	newdog->age = age;
 
 	return (newdog);
