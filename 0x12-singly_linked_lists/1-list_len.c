@@ -7,10 +7,11 @@
  */
 size_t list_len(const list_t *h)
 {
-	size_t list_len = 1;
+	size_t list_len = 0;
 
 	if (h != NULL)
 	{
+		list_len = 1;
 		list_t *temp = (list_t *) h;
 
 		while (temp->next != NULL)
