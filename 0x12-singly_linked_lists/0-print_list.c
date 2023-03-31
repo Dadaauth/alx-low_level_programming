@@ -9,31 +9,34 @@
 size_t print_list(const list_t *h)
 {
 	list_t *current = (list_t *) h;
-	long unsigned int node_count = 0;
+	unsigned int node_count = 0;
 	bool continue_loop = true;
 
-	while (continue_loop)
+	if (current != NULL)
 	{
-		if (current->str == NULL)
-			printf("[0] (nil)");
-		else
+		while (continue_loop)
 		{
-			printf("[%u] %s", current->len, current->str);
+			if (current->str == NULL)
+				printf("[0] (nil)");
+			else
+			{
+				printf("[%u] %s", current->len, current->str);
+			}
+			node_count++;
+			if (current->next == NULL)
+				continue_loop = false;
+			else
+			{
+				current = current->next;
+				printf("\n");
+			}
 		}
-		node_count++;
-		if (current->next == NULL)
-			continue_loop = false;
-		else
-		{
-			current = current->next;
-			printf("\n");
-		}
-	}
 	/**
 	 * You can also check if the next structure has
 	 * a NULL pointer so you stop the loop then print
 	 * the next structure contents after the loop
 	 */
 	printf("\n");
+	}
 	return (node_count);
 }
