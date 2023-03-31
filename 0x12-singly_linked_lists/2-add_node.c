@@ -17,7 +17,7 @@ list_t *add_node(list_t **head, const char *str)
 	 * get length of string
 	 */
 	if (str != NULL)
-	{	
+	{
 		for (i = 0; str[i]; i++)
 			str_len++;
 		new = malloc(sizeof(list_t));
