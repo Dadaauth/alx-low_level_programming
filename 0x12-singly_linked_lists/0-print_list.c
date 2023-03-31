@@ -29,6 +29,11 @@ size_t print_list(const list_t *h)
 			printf("\n");
 		}
 	}
+	/**
+	 * You can also check if the next structure has
+	 * a NULL pointer so you stop the loop then print
+	 * the next structure contents after the loop
+	 */
 	printf("\n");
 	return (node_count);
 }
