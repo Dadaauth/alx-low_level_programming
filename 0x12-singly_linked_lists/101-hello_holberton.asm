@@ -1,22 +1,21 @@
-section .data
-	fmt db "%s\n", 0 ;
+	extern printf    ;
 
-	msg db "Hello, Holberton", 10, 0 ;
+	section .data
+msg:	db "Hello, Holberton", 0 ;
+fmt:	db "%s", 10, 0	;
 
-section .text
-	global main
-	extern printf
+	section .text	;
 
+	global main	;
 main:
-	push rbp
-	mov rbp, rsp
+	push	rbp	;
+	
+	mov	rdi,fmt
+	mov	rsi,msg
+	mov	rax,0	;
+	call	printf	;
 
-	push msg ;
-	push qword fmt ;
-	call printf ;
-	add rsp, 16 ;
-
-	mov rsp, rbp
-	pop rbp
-	xor eax,eax
-	ret ;
+	pop rbp	;
+	
+	mov rax,0	;
+	ret	;
