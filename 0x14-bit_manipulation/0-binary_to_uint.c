@@ -22,7 +22,7 @@ int getStrLen(const char *str)
  *
  * Return: Always o.
  */
-unsigned int binary_to_uint(const char *b) 
+unsigned int binary_to_uint(const char *b)
 {
 	unsigned int decimal;
 	int i, j;
