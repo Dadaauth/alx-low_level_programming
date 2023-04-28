@@ -1,6 +1,3 @@
-Here's an example program in C that displays the information contained in the ELF header at the start of an ELF file:
-
-```
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
