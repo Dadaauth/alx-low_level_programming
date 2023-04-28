@@ -23,6 +23,7 @@ void print_hex(const unsigned char* buf, size_t len)
 int main(int argc, char* argv[])
 {
 	int fd;
+	Elf64_Ehdr ehdr;
 
 
     if (argc != 2) {
@@ -34,7 +35,7 @@ int main(int argc, char* argv[])
         error_exit("Could not open file");
     }
 
-    Elf64_Ehdr ehdr;
+
     if (read(fd, &ehdr, sizeof(ehdr)) != sizeof(ehdr)) {
         error_exit("Failed to read ELF header");
     }
