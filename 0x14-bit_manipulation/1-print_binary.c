@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "main.h"
 /**
  * print_binary - kfhdk
  * @n: dkddj
@@ -6,7 +7,9 @@
 void print_binary(unsigned long int n)
 {
 	int started = 0;
-	for (int i = 63; i >= 0; i--)
+	int i;
+
+	for (i = 63; i >= 0; i--)
 	{
 		if ((n >> i) & 1)
 		{
