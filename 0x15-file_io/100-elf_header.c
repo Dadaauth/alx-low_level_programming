@@ -10,35 +10,40 @@ void error_exit(const char* msg) {
     exit(98);
 }
 
-void print_hex(const unsigned char* buf, size_t len) {
-    for (size_t i = 0; i < len; i++) {
+void print_hex(const unsigned char* buf, size_t len)
+{
+	size_t i;
+
+    for (i = 0; i < len; i++) {
         printf("%02x ", buf[i]);
     }
     printf("\n");
 }
 
-int main(int argc, char* argv[]) {
+int main(int argc, char* argv[])
+{
+	int fd;
+
+
     if (argc != 2) {
         error_exit("Usage: elf_header elf_filename");
     }
 
-    int fd = open(argv[1], O_RDONLY);
+    fd = open(argv[1], O_RDONLY);
     if (fd == -1) {
         error_exit("Could not open file");
     }
 
-    // Read the ELF header
     Elf64_Ehdr ehdr;
     if (read(fd, &ehdr, sizeof(ehdr)) != sizeof(ehdr)) {
         error_exit("Failed to read ELF header");
     }
 
-    // Verify that it's an ELF file
     if (memcmp(ehdr.e_ident, ELFMAG, SELFMAG) != 0) {
         error_exit("Not an ELF file");
     }
 
-    // Print the header information
+
     printf("Magic: ");
     print_hex(ehdr.e_ident, EI_NIDENT);
 
@@ -80,4 +85,16 @@ int main(int argc, char* argv[]) {
         case ET_NONE: printf("NONE (No file type)\n"); break;
         case ET_REL: printf("REL (Relocatable file)\n"); break;
         case ET_EXEC: printf("EXEC (Executable file)\n"); break;
-        case ET_DYN: printf("DYN (Shared object file)\
+        case ET_DYN: printf("DYN (Shared object file)\n"); break;
+        case ET_CORE: printf("CORE (Core file)\n"); break;
+        default: printf("Unknown\n");
+    }
+
+    printf("Entry point address: 0x%lx\n", (unsigned long)ehdr.e_entry);
+
+    if (close(fd) == -1) {
+        error_exit("Failed to close file");
+    }
+    return 0;
+}
+
