@@ -44,27 +44,27 @@ int main(int argc, char* argv[])
         error_exit("Not an ELF file");
     }
 
-
-    printf("Magic: ");
+	printf("ELF Header:");
+    printf("Magic: \t");
     print_hex(ehdr.e_ident, EI_NIDENT);
 
-    printf("Class: ");
+    printf("Class: \t\t");
     switch (ehdr.e_ident[EI_CLASS]) {
         case ELFCLASS32: printf("ELF32\n"); break;
         case ELFCLASS64: printf("ELF64\n"); break;
         default: printf("Invalid\n");
     }
 
-    printf("Data: ");
+	printf("Data: \t\t");
     switch (ehdr.e_ident[EI_DATA]) {
         case ELFDATA2LSB: printf("2's complement, little endian\n"); break;
         case ELFDATA2MSB: printf("2's complement, big endian\n"); break;
         default: printf("Invalid\n");
     }
 
-    printf("Version: %d\n", ehdr.e_ident[EI_VERSION]);
+    printf("Version: \t\t%d\n", ehdr.e_ident[EI_VERSION]);
 
-    printf("OS/ABI: ");
+    printf("OS/ABI: \t\t");
     switch (ehdr.e_ident[EI_OSABI]) {
         case ELFOSABI_SYSV: printf("UNIX - System V\n"); break;
         case ELFOSABI_HPUX: printf("UNIX - HP-UX\n"); break;
@@ -79,9 +79,9 @@ int main(int argc, char* argv[])
         default: printf("Unknown\n");
     }
 
-    printf("ABI Version: %d\n", ehdr.e_ident[EI_ABIVERSION]);
+    printf("ABI Version: \t\t%d\n", ehdr.e_ident[EI_ABIVERSION]);
 
-    printf("Type: ");
+    printf("Type: \t\t");
     switch (ehdr.e_type) {
         case ET_NONE: printf("NONE (No file type)\n"); break;
         case ET_REL: printf("REL (Relocatable file)\n"); break;
@@ -91,7 +91,7 @@ int main(int argc, char* argv[])
         default: printf("Unknown\n");
     }
 
-    printf("Entry point address: 0x%lx\n", (unsigned long)ehdr.e_entry);
+	printf("Entry point address:\t\t 0x%lx\n", (unsigned long)ehdr.e_entry);
 
     if (close(fd) == -1) {
         error_exit("Failed to close file");
