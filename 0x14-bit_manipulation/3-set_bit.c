@@ -5,7 +5,8 @@
  * @index: fdkj f
  * Return: ddjkd
  */
-int set_bit(unsigned long int *n, unsigned int index) {
+int set_bit(unsigned long int *n, unsigned int index)
+{
 	if (index >= sizeof(unsigned long int) * 8)
 	{
 		return (-1);
