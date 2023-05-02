@@ -37,12 +37,15 @@ void _strcpy(char *str1, char *str2)
  * @name: name of the new dog
  * @age: age
  * @owner: owner
+ * Return: a new dog structure
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *new_dog;
 	char *name2, *owner2;
 
+	if (name == NULL || owner == NULL)
+		return (NULL);
 	name2 = malloc(lenOfStr(name) + 1 * sizeof(char));
 	owner2 = malloc(lenOfStr(owner) + 1 * sizeof(char));
 	new_dog = malloc(sizeof(dog_t));
