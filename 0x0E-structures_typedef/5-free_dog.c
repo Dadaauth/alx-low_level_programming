@@ -2,4 +2,10 @@
 #include <stdlib.h>
 #include "dog.h"
 /**
- * free_dog
+ * free_dog - frees dogs
+ * @d: the dog structure variable
+ */
+void free_dog(dog_t *d)
+{
+	
+}
