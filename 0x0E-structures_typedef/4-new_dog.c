@@ -1,6 +1,21 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include "dog.h"
+/**
+ * lenOfStr - length of a string
+ * @str: the string
+ * Return: thhe length
+ */
+size_t lenOfStr(char *str)
+{
+	int i;
+	size_t len = 0;
+
+	for (i = 0; str[i]; i++)
+		len++;
+	return (len);
+}
 /**
  * _strcpy - string copy
  * @str1: string 1
@@ -15,6 +30,7 @@ void _strcpy(char *str1, char *str2)
 	{
 		str1[i] = str2[i];
 	}
+	str1[i] = '\0';
 }
 /**
  * new_dog - creates a new dog
@@ -24,10 +40,17 @@ void _strcpy(char *str1, char *str2)
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t new_dog;
+	dog_t *new_dog;
+	char *name2, *owner2;
 
+	name2 = malloc(lenOfStr(name) + 1 * sizeof(char));
+	owner2 = malloc(lenOfStr(owner) + 1 * sizeof(char));
 	new_dog = malloc(sizeof(dog_t));
-	_strcpy(new_dog.name, name);
-	_strcpy(new_dog.owner, owner);
-	new_dog.age = age;
+	_strcpy(name2, name);
+	_strcpy(owner2, owner);
+	new_dog->name = name2;
+	new_dog->owner = owner2;
+	new_dog->age = age;
+
+	return (new_dog);
 }
