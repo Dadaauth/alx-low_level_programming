@@ -34,6 +34,30 @@ void free_item(hash_node_t *item)
 	free(item);
 }
 /**
+ * free_table - frees a hash table
+ * @ht: the hash table
+ */
+void free_table(hash_table_t *ht)
+{
+	unsigned long i = 0;
+	hash_node_t *temp;
+
+	for (i = 0; i < ht->size; i++)
+	{
+		if (ht->array[i] != NULL)
+		{
+			while (ht->array[i] != NULL)
+			{
+				temp = ht->array[i]->next;
+				free_item(ht->array[i]);
+				ht->array[i] = temp;
+			}
+		}
+	}
+	free(ht->array);
+	free(ht);
+}
+/**
  * hash_table_set - adds an element to a hash table/ updates a hash table
  * @ht: the hash table to work on.
  * @key: the key for the new item
@@ -42,7 +66,7 @@ void free_item(hash_node_t *item)
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *item;
+	hash_node_t *item, *temp;
 	unsigned long idx;
 
 	if (strcmp(key, "") == 0 || ht == NULL)/* check if key is an empty string */
@@ -60,8 +84,23 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	else
 	{
 		/* collisions found */
-		item = hash_item_create(ht->array[idx], key, value);
-		ht->array[idx] = item;
+		if (strcmp(ht->array[idx]->key, key) == 0)
+			strcpy(ht->array[idx]->value, value);
+		else
+		{
+			temp = ht->array[i];
+			while (temp != NULL)
+			{
+				if (strcmp(temp->key, key) == 0)
+				{
+					strcpy(temp->value, value);
+					return (1);
+				}
+				temp = temp->next;
+			}
+			item = hash_item_create(ht->array[idx], key, value);
+			ht->array[idx] = item;
+		}
 	}
 	return (1);
 }
