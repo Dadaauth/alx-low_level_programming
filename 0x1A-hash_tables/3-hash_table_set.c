@@ -84,15 +84,27 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	else
 	{
 		/* collisions found */
+		/* the first item is the key we are looking for */
 		if (strcmp(ht->array[idx]->key, key) == 0)
+		{
+			free(ht->array[idx]->value);
+			ht->array[idx]->value = malloc(strlen(value) + 1);
 			strcpy(ht->array[idx]->value, value);
+		}
 		else
 		{
-			temp = ht->array[i];
+			/**
+			 * we need to transverse through
+			 * the linked list to check if the
+			 * key exists.
+			 */
+			temp = ht->array[idx];
 			while (temp != NULL)
 			{
 				if (strcmp(temp->key, key) == 0)
 				{
+					free(temp->value);
+					temp->value = malloc(strlen(value) + 1);
 					strcpy(temp->value, value);
 					return (1);
 				}
